@@ -1,11 +1,33 @@
 from matplotlib import pyplot as plt
 import numpy as np
-
 from sklearn.linear_model import (
      LinearRegression)
-from sklearn.metrics import mean_squared_error
+import pandas as pd
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline        
+
+def model(input):
+     data = pd.read_csv(#CSV FILE))
+     data.drop(["Date as of", "State", "MMWR Week", "Sex"], axis=1) 
+     week = np.array([ ]).reshape(-1,1)
+     deaths = np.array([ ]).reshape(-1,1)
+     
+     df[df.AgeGroup == input]
+     number = 1
+     for i in data.iterrows(""):
+          week = week.append(number)
+          deaths = deaths.append(["COVID-19 Deaths": i ]) # Need to access index 
+          number = number + 1
+     return weeks 
+     return deaths 
+
+def polynomial(weeks, deaths):
+    model = make_pipeline(PolynomialFeatures(3), LinearRegression())
+    fittingmodel = model.fit(week, deaths) #polynomial regression model
+    y_plot = model.predict(week[:, np.newaxis].reshape(-1,1))
+    length = len(week)
+    covid = model.predict(week[length-1].reshape(-1,1))
+    # total deaths 
 
 week = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9]).reshape(-1,1)
 deaths = np.array([1625, 1268, 1178, 1081, 1205, 1324, 1611, 1518, 841]).reshape(-1,1)
